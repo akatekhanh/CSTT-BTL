@@ -6,12 +6,20 @@ INF = 10 ** 18
 
 def main():
     """
-        
+        n: number of vertices
+        m: numver of edges
+        k: path shortest k-th
+        s: source vertex
+        t: target vertex
     """
-    n, m, s, t, k = map(int, input().split())
+    with open('input.txt', 'r') as file:
+        # remove new line character
+        lines = [line.rstrip('\n') for line in file]
+
+    n, m, s, t, k = map(int, lines[0].split(' '))
     g = [[] for _ in range(n)]
-    for _ in range(m):
-        u, v, w = map(int, input().split())
+    for item in lines[1:]:
+        u, v, w = map(int, item.split(' '))
         g[u].append((w, v))
     ans = shortest_paths(g, s, t, k)
     for d in ans:
