@@ -1,3 +1,10 @@
+# MATHEMATICAL FOUNDATION FOR COMPUTER SCIENCE (055263)_TRAN TUAN ANH
+# CSTH-ABC: Labeling connected-component problem.
+# Members:
+    # Le Phuong Nam - 2170545
+    # Ngo Quoc Khanh - 1812593
+    # Lam Phung Phuoc Vinh - 2270093
+    # Nguyen Quoc Anh - 2270074
 # Import neccesery library
 from PIL import Image, ImageOps
 from traitlets import default
@@ -41,8 +48,8 @@ label = {}
 im_labelled = zeros(shape=(h,w)).astype(int)
 with open('initial_array.txt', 'w') as f:
     csv.writer(f, delimiter=' ').writerows(im)
-for row in range(2,h-1):
-    for col in range(2, w-1):
+for row in range(0,h):
+    for col in range(0, w):
         # Scan pixel if it is not equal to 0 (not background)
         if im[row,col] == 1:
             # Neighbours-4
