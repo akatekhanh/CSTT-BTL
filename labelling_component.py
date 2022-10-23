@@ -1,6 +1,4 @@
 # Import neccesery library
-from PIL import Image, ImageOps
-from traitlets import default
 from numpy import *
 import csv
 
